@@ -1,5 +1,8 @@
 
 package LapanganBadminton;
+
+import javax.swing.JOptionPane;
+
 public class Login extends javax.swing.JFrame {
     
     public Login() {
@@ -112,10 +115,25 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_PassActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Frame_booking_lapangan Laund = new Frame_booking_lapangan();
-        Laund.setVisible(true);
-        
-         
+      if(User.getText().equals("admin")) // admin = username yang akan digunakan
+        {
+            if(Pass.getText().equals("admin")) // admin = password
+            {
+
+                this.dispose(); //menutup form login
+             
+                //menuju form lain. Contoh disini adalah form home.
+                Frame_booking_lapangan menu=new Frame_booking_lapangan(); //mendeklarasikan form home sebagai variabel menu, menu disini hanya nama, jadi bebas sebenarnya
+                menu.setVisible(true); //memanggil form home
+
+            }else
+            {
+                //Jika password salah
+                JOptionPane.showMessageDialog(null,"Incorrect Password","Error",JOptionPane.ERROR_MESSAGE);//memanggil message dialog
+                Pass.setText("");//mengosongkan password field
+                Pass.requestFocus();//mengganti fokus ke password field
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

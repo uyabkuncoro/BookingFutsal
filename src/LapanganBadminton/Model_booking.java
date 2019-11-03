@@ -1,12 +1,13 @@
 package LapanganBadminton;
 import javax.swing.table.DefaultTableModel;
 public class Model_booking {
-    String user="rozziq";
-    int pass=123;
+    String user="admin";
+    String pass="admin";
 private DefaultTableModel tabel = new DefaultTableModel();
         
         public Model_booking(){
-
+            
+            getTabel().addColumn("Kategori");
             getTabel().addColumn("Kode");
             getTabel().addColumn("Tanggal");
             getTabel().addColumn("Waktu");
@@ -30,7 +31,7 @@ private DefaultTableModel tabel = new DefaultTableModel();
         
         int a;
         
-        if(user=="rozziq" && pass==123){
+        if(user=="admin" && pass=="admin"){
             
         }
         
